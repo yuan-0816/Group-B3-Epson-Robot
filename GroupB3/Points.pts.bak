@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/11/25 12:46:33:315,DS:0000002733,CS:28211,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/25 10:25:40:206,DS:0000002734,CS:25106,MA:00-D8-61-87-1A-F7,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
 nNumberOfPoints=13
@@ -65,7 +65,7 @@ Point4 {
 	rZ=10
 	rU=0
 	rV=0
-	rW=180
+	rW=-180
 	nLocal=0
 	nHand=1
 	nElbow=1

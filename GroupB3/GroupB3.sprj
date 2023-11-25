@@ -1,12 +1,12 @@
-ENVT0100,LM:2023/11/25 08:55:48:791,DS:0000002586,CS:52438,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/25 13:35:06:846,DS:0000002589,CS:52926,MA:00-D8-61-87-1A-F7,EI:           
 SystemProperties {
 	sRC50Version="5.4.7"
 	sGUID="f72048ee-dcee-451c-9d8d-114b2c6feaf0"
 	bSimple=False
 	sCreated="2023/11/25 下午 04:55:48"
-	sLastModified="2023/11/25 下午 04:55:48"
-	bBuildComplete=False
-	bRebuildRequired=True
+	sLastModified="2023/11/25 下午 09:35:05"
+	bBuildComplete=True
+	bRebuildRequired=False
 	bClearControllerProject=False
 	bClearGlobalPreserves=False
 	sComputerName="DESKTOP-77851N7"
@@ -28,15 +28,15 @@ UserErrorsFile {
 nProgramFileCount=1
 ProgramFile1 {
 	sName="Main.prg"
-	bCompiled=False
+	bCompiled=True
 	bStoreInController=True
-	sTimeSavedInController="0001/1/1 上午 12:00:00"
+	sTimeSavedInController="2023/11/25 下午 01:35:05"
 }
 nIncludeFileCount=0
 nPointFileCount=1
 PointFile1 {
 	sName="Points.pts"
-	sTimeSavedInController="0001/1/1 上午 12:00:00"
+	sTimeSavedInController="2023/11/25 下午 12:46:33"
 }
 OperatorSettings {
 	OperatorWindow {

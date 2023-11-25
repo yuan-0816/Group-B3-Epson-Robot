@@ -197,8 +197,8 @@ Fend
 
 Function main
 	init()
-	Block_()
-	'Token_()
+	'Block_()
+	Token_()
 	
 	
 Fend
