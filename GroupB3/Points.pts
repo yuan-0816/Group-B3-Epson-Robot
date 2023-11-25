@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/11/25 12:46:33:315,DS:0000002733,CS:28211,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/25 13:55:14:388,DS:0000002733,CS:27955,MA:00-D8-61-87-1A-F7,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
 nNumberOfPoints=13
@@ -51,7 +51,7 @@ Point3 {
 	nLocal=0
 	nHand=1
 	nElbow=1
-	nWrist=2
+	nWrist=1
 	nJ4Flag=0
 	nJ6Flag=0
 	bSimVisible=False
@@ -69,7 +69,7 @@ Point4 {
 	nLocal=0
 	nHand=1
 	nElbow=1
-	nWrist=2
+	nWrist=1
 	nJ4Flag=0
 	nJ6Flag=0
 	bSimVisible=False
@@ -87,7 +87,7 @@ Point5 {
 	nLocal=0
 	nHand=1
 	nElbow=1
-	nWrist=2
+	nWrist=1
 	nJ4Flag=0
 	nJ6Flag=0
 	bSimVisible=False

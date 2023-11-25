@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/11/25 13:39:12:178,DS:0000001303,CS:29475,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/25 14:18:59:220,DS:0000001306,CS:17463,MA:00-D8-61-87-1A-F7,EI:           
 sActiveChild="¹B¦\x"
 bMdiMaximized=False
 ProgramFile1 {
@@ -6,8 +6,8 @@ ProgramFile1 {
 	bOpened=True
 	nWinState=0
 	Window {
-		nLeft=778
-		nTop=-1
+		nLeft=845
+		nTop=0
 		nWidth=874
 		nHeight=800
 	}
@@ -19,10 +19,10 @@ PointFile1 {
 	bOpened=False
 	nWinState=0
 	Window {
-		nLeft=149
-		nTop=147
-		nWidth=0
-		nHeight=0
+		nLeft=75
+		nTop=158
+		nWidth=1477
+		nHeight=572
 	}
 }
 sActiveWindow="main.prg"
@@ -85,8 +85,8 @@ Macros {
 RobotMgr {
 	bOpened=True
 	Window {
-		nLeft=449
-		nTop=214
+		nLeft=368
+		nTop=181
 		nWidth=689
 		nHeight=448
 	}

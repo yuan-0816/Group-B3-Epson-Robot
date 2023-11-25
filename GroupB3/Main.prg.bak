@@ -66,10 +66,14 @@ Function init
 	ToAlignToken_Y = 145.34
 	ToAlignToken_Z = 10.0 + TokenHeight
 	
+	local_origin = local_origin /NF
+	local_X = local_X /NF
+	local_Y = local_Y /NF
+	
 	Tool 1
 	LocalClr 1
 	Local 1, local_origin, local_X, local_Y, X
-		
+	
 	origin = local_origin @1
 	
 	TrayBlock = origin + XY(ToTrayBlock_X, ToTrayBlock_Y, ToTrayBlock_Z, 0) /1
@@ -93,50 +97,54 @@ Function init
 Fend
 
 Function test
+	Integer i
 	init()
-	Go TrayBlock
-	Go TrayToken
-	Go InfeedBlock
-	Go InfeedToken
-	Go AlignBlock
-	Go AlignToken
+	For i = 2 To 0 Step -1
+		Move InfeedBlock /1
+		Move InfeedToken /1
+		Move AlignBlock /1
+		Move AlignToken /1
+		Move TrayBlock +X(i * TrayDistance) /1
+		Move TrayToken +X(i * TrayDistance) /1
+		Go safepoint /1
+	Next i
 Fend
 
 Function Pick_Infeed_Block
 	
 	'Pick Block from Infeed
 	Print "Picking Block from Infeed. Block ID = ", Blocks
-	Go InfeedBlock +Z(Blocks * BlockHeight + InfeedHeight) /1 CP
-	Move InfeedBlock +Z(Blocks * BlockHeight) /1 CP
+	Go InfeedBlock +Z(Blocks * BlockHeight + InfeedHeight) /1
+	Move InfeedBlock +Z(Blocks * BlockHeight) /1
 	On 8
 	Wait PressureTime
-	Move InfeedBlock +Z(1 + (Blocks * BlockHeight)) /1 CP
-	Move InfeedBlock +Z(Blocks * BlockHeight + InfeedHeight) /1 CP
+	Move InfeedBlock +Z(1 + (Blocks * BlockHeight)) /1
+	Move InfeedBlock +Z(Blocks * BlockHeight + InfeedHeight) /1
 	
 Fend
 
 Function Alignment_Block
 	'Alignment Block
 	Print "Aligning Block. Block ID = ", Blocks
-    Go AlignBlock +Z(50) /1 CP
-	Move AlignBlock /1 CP
+    Go AlignBlock +Z(50) /1
+	Move AlignBlock /1
 	Off 8
-	Move AlignBlock +X(2) +Y(-6) /1 CP
-	Move AlignBlock +Z(5) /1 CP
-	Move AlignBlock /1 CP
+	Move AlignBlock +X(2) +Y(-6) /1
+	Move AlignBlock +Z(5) /1
+	Move AlignBlock /1
 	On 8
 	Wait PressureTime
-	Move AlignBlock +Z(20) /1 CP
+	Move AlignBlock +Z(20) /1
 Fend
 
 Function Place_Tray_Block
 	'Tray Block
 	Print "Placing Block in Tray. Block Position ID = ", Blocks
-	Go TrayBlock +X(Blocks * TrayDistance) +Z(30) /1 CP
-	Move TrayBlock +X(Blocks * TrayDistance) /1 CP
+	Go TrayBlock +X(Blocks * TrayDistance) +Z(30) /1
+	Move TrayBlock +X(Blocks * TrayDistance) /1
 	Off 8
 	Wait PressureTime
-	Move TrayBlock +X(Blocks * TrayDistance) +Z(30) /1 CP
+	Move TrayBlock +X(Blocks * TrayDistance) +Z(30) /1
 Fend
 
 Function Block_
@@ -153,37 +161,37 @@ Function Pick_Infeed_Token
 	
 	'Pick Block from Infeed
 	Print "Picking Token from Infeed. Token ID = ", Tokens
-	Go InfeedToken +Z(Tokens * TokenHeight + InfeedHeight) /1 CP
-	Move InfeedToken +Z(Tokens * TokenHeight) /1 CP
+	Go InfeedToken +Z(Tokens * TokenHeight + InfeedHeight) /1
+	Move InfeedToken +Z(Tokens * TokenHeight) /1
 	On 8
 	Wait PressureTime
-	Move InfeedToken +Z(1 + (Tokens * TokenHeight)) /1 CP
-	Move InfeedToken +Z(Tokens * TokenHeight + InfeedHeight) /1 CP
+	Move InfeedToken +Z(1 + (Tokens * TokenHeight)) /1
+	Move InfeedToken +Z(Tokens * TokenHeight + InfeedHeight) /1
 	
 Fend
 
 Function Alignment_Token
 	'Alignment Block
 	Print "Aligning Token. Token ID = ", Tokens
-    Go AlignToken +Z(50) /1 CP
-	Move AlignToken /1 CP
+    Go AlignToken +Z(50) /1
+	Move AlignToken /1
 	Off 8
-	Move AlignToken +X(5) /1 CP
-	Move AlignToken +Z(5) /1 CP
-	Move AlignToken /1 CP
+	Move AlignToken +X(5) /1
+	Move AlignToken +Z(5) /1
+	Move AlignToken /1
 	On 8
 	Wait PressureTime
-	Move AlignToken +Z(20) /1 CP
+	Move AlignToken +Z(20) /1
 Fend
 
 Function Place_Tray_Token
 	'Tray Block
 	Print "Placing Token in Tray. Token Position ID = ", Tokens
-	Go TrayToken +X(Tokens * TrayDistance) +Z(30) /1 CP
-	Move TrayToken +X(Tokens * TrayDistance) /1 CP
+	Go TrayToken +X(Tokens * TrayDistance) +Z(30) /1
+	Move TrayToken +X(Tokens * TrayDistance) /1
 	Off 8
 	Wait PressureTime
-	Move TrayToken +X(Tokens * TrayDistance) +Z(30) /1 CP
+	Move TrayToken +X(Tokens * TrayDistance) +Z(30) /1
 Fend
 
 Function Token_
@@ -197,7 +205,7 @@ Fend
 
 Function main
 	init()
-	'Block_()
+	Block_()
 	Token_()
 	
 	
