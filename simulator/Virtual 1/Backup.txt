@@ -1,0 +1,28 @@
+ENVT0100,LM:2023/11/25 13:56:46:745,DS:0000000761,CS:00890,MA:00-D8-61-87-1A-F7,EI:           
+General {
+	sDate="2023/11/25 13:56:46:735"
+	sVersion="10. 4. 4. 0"
+	sSerial="0"
+	nFileVersion=100
+	nMnpCount=1
+	nCurrentMnpNo=1
+	nPrjFileCount=10
+	nPCInfoFileCount=0
+}
+Files {
+	sF000="/Mounted Volume/InitFileSrc.txt"
+	sF001="/CurrentMnp01.PRM"
+	sF002="/Mounted Volume/MCSys01.MCD"
+}
+PrjFiles {
+	sF000="/Temp/Project/GroupB3.gui"
+	sF001="/Temp/Project/GroupB3.obj"
+	sF002="/Temp/Project/GroupB3.sprj"
+	sF003="/Temp/Project/IOLabels.dat"
+	sF004="/Temp/Project/Main.obj"
+	sF005="/Temp/Project/Main.prg"
+	sF006="/Temp/Project/Points.pts"
+	sF007="/Temp/Project/test.obj"
+	sF008="/Temp/Project/test.prg"
+	sF009="/Temp/Project/UserErrors.dat"
+}
