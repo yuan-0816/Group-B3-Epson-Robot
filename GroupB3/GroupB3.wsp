@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/11/25 14:18:59:220,DS:0000001306,CS:17463,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/25 14:38:06:511,DS:0000001307,CS:24696,MA:00-D8-61-87-1A-F7,EI:           
 sActiveChild="¹B¦\x"
 bMdiMaximized=False
 ProgramFile1 {
@@ -83,7 +83,7 @@ Macros {
 	}
 }
 RobotMgr {
-	bOpened=True
+	bOpened=False
 	Window {
 		nLeft=368
 		nTop=181
