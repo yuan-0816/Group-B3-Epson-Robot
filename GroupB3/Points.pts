@@ -1,7 +1,7 @@
-ENVT0100,LM:2023/11/25 13:55:14:388,DS:0000002733,CS:27955,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/26 12:23:28:875,DS:0000003569,CS:01588,MA:00-D8-61-87-1A-F7,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
-nNumberOfPoints=13
+nNumberOfPoints=17
 Point1 {
 	nNumber=0
 	sLabel="underworkcell"
@@ -221,6 +221,78 @@ Point12 {
 Point13 {
 	nNumber=12
 	sLabel="AlignToken"
+	sDescription=""
+	rX=0
+	rY=0
+	rZ=0
+	rU=0
+	rV=0
+	rW=0
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point14 {
+	nNumber=14
+	sLabel="RealLocalOrigin"
+	sDescription=""
+	rX=426.508
+	rY=-84.879
+	rZ=-1.41
+	rU=0
+	rV=0
+	rW=180
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point15 {
+	nNumber=15
+	sLabel="RealLocalX"
+	sDescription=""
+	rX=451.633
+	rY=-84.604
+	rZ=-2.492
+	rU=0
+	rV=0
+	rW=-180
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point16 {
+	nNumber=16
+	sLabel="RealLocalY"
+	sDescription=""
+	rX=425.946
+	rY=-60.669
+	rZ=-1.13
+	rU=0
+	rV=0
+	rW=-180
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point17 {
+	nNumber=18
+	sLabel=""
 	sDescription=""
 	rX=0
 	rY=0

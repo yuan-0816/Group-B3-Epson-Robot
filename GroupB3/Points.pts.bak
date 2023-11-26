@@ -1,7 +1,7 @@
-ENVT0100,LM:2023/11/25 13:52:48:187,DS:0000002733,CS:27955,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/26 09:40:50:250,DS:0000003422,CS:03175,MA:00-D8-61-87-1A-F7,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
-nNumberOfPoints=13
+nNumberOfPoints=16
 Point1 {
 	nNumber=0
 	sLabel="underworkcell"
@@ -228,6 +228,60 @@ Point13 {
 	rU=0
 	rV=0
 	rW=0
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point14 {
+	nNumber=14
+	sLabel="RealLocalOrigin"
+	sDescription=""
+	rX=428.796
+	rY=-82.71
+	rZ=-9.537
+	rU=-0.006
+	rV=1.66
+	rW=-179.607
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point15 {
+	nNumber=15
+	sLabel="RealLocalX"
+	sDescription=""
+	rX=453.916
+	rY=-82.741
+	rZ=-10.632
+	rU=-0.006
+	rV=1.659
+	rW=-179.603
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point16 {
+	nNumber=16
+	sLabel="RealLocalY"
+	sDescription=""
+	rX=428.596
+	rY=-58.56
+	rZ=-8.837
+	rU=-0.006
+	rV=1.66
+	rW=-179.607
 	nLocal=0
 	nHand=1
 	nElbow=1
