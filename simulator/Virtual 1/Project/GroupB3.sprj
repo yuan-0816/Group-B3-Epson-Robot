@@ -1,11 +1,11 @@
-ENVT0100,LM:2023/11/25 13:55:14:658,DS:0000002590,CS:37771,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/28 00:51:02:295,DS:0000002589,CS:49340,MA:00-D8-61-87-1A-F7,EI:           
 SystemProperties {
 	sRC50Version="5.4.7"
 	sGUID="f72048ee-dcee-451c-9d8d-114b2c6feaf0"
 	bSimple=False
 	sCreated="2023/11/25 下午 04:55:48"
-	sLastModified="2023/11/25 下午 09:55:12"
-	bBuildComplete=False
+	sLastModified="2023/11/28 上午 08:51:00"
+	bBuildComplete=True
 	bRebuildRequired=False
 	bClearControllerProject=False
 	bClearGlobalPreserves=False
@@ -30,13 +30,13 @@ ProgramFile1 {
 	sName="Main.prg"
 	bCompiled=True
 	bStoreInController=True
-	sTimeSavedInController="2023/11/25 下午 01:52:13"
+	sTimeSavedInController="2023/11/28 上午 12:51:00"
 }
 nIncludeFileCount=0
 nPointFileCount=1
 PointFile1 {
 	sName="Points.pts"
-	sTimeSavedInController="2023/11/25 下午 01:55:14"
+	sTimeSavedInController="2023/11/28 上午 12:45:12"
 }
 OperatorSettings {
 	OperatorWindow {

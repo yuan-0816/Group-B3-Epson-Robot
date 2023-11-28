@@ -1,5 +1,5 @@
-ENVT0100,LM:2023/11/26 13:55:50:676,DS:0000001307,CS:32588,MA:00-D8-61-87-1A-F7,EI:           
-sActiveChild="Main.prg"
+ENVT0100,LM:2023/11/28 00:53:11:257,DS:0000001305,CS:16472,MA:00-D8-61-87-1A-F7,EI:           
+sActiveChild="¹B¦\x"
 bMdiMaximized=False
 ProgramFile1 {
 	sName="Main.prg"
@@ -19,30 +19,30 @@ PointFile1 {
 	bOpened=False
 	nWinState=0
 	Window {
-		nLeft=75
-		nTop=158
+		nLeft=202
+		nTop=149
 		nWidth=1477
 		nHeight=572
 	}
 }
 sActiveWindow="main.prg"
 CmdWindow {
-	bOpened=True
+	bOpened=False
 	Window {
-		nLeft=209
-		nTop=129
+		nLeft=23
+		nTop=40
 		nWidth=1291
 		nHeight=612
 	}
 	nWinState=0
 }
 RunWindow {
-	bOpened=False
+	bOpened=True
 	Window {
-		nLeft=111
-		nTop=500
+		nLeft=1014
+		nTop=536
 		nWidth=608
-		nHeight=306
+		nHeight=303
 	}
 }
 IOLabelEditor {
@@ -85,8 +85,8 @@ Macros {
 RobotMgr {
 	bOpened=False
 	Window {
-		nLeft=82
-		nTop=48
+		nLeft=822
+		nTop=96
 		nWidth=689
 		nHeight=448
 	}
