@@ -7,7 +7,9 @@ Autonomous Mobile Vehicles and Robots Introduction B3
   * Simulator
   * Real Device
 + Graphical User Interface
-  * Layout. 
+  * Layout
+
+***
 
 ## WorkCell
 ![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/workcell%20v9.png)
