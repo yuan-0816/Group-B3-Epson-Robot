@@ -5,7 +5,7 @@ Autonomous Mobile Vehicles and Robots Introduction B3
 ### WorkCell Layout
 ![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/workcell_layout.png). 
 
-## 架構
+## 專案架構
 | **檔案名稱**     | **說明** |
 |--------------|-------------------------|
 | [CadFile](https://github.com/yuan-0816/Group-B3-Epson-Robot/tree/main/CadFile)      |3D step file.            |
