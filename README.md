@@ -8,11 +8,11 @@
 + [WorkCell](#workcell)
   * [WorkCell Layout](#workcell-layout)
 + [Pick And Place](#Pick-And-Place)
-  * Simulator 
-  * Real Device
-+ Jenga
-  * Simulator
-  * Real Device
+  * [Simulator](#Simulator)
+  * [Real Device](#Real-Device)
++ [Jenga](#Jenga)
+  * [Simulator](#Simulator)
+  * [Real Device](#Real-Device)
 + Graphical User Interface
   * Layout
 
