@@ -1,5 +1,11 @@
 # Group-B3-Epson-Robot
 Autonomous Mobile Vehicles and Robots Introduction B3
++ Pick And Place
+  * Simulator 
+  * Real Device
++ Jenga
+  * Simulator
+  * Real Device
 ## WorkCell
 ![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/workcell%20v9.png)
 ### WorkCell Layout
