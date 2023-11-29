@@ -1,6 +1,6 @@
 # Group-B3-Epson-Robot
 ##### Autonomous Mobile Vehicles and Robots Introduction B3
-[![ubuntu22][ubuntu22-badge]][ubuntu22]
+
 
 -----
 # Introduction
