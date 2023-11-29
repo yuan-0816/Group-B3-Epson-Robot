@@ -13,7 +13,7 @@
 + [Jenga](#Jenga)
   * Simulator
   * Real Device
-+ Graphical User Interface
++ [Graphical User Interface](#Graphical-User-Interface)
   * Layout
 
 -------
