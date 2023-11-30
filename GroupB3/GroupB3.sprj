@@ -1,11 +1,11 @@
-ENVT0100,LM:2023/11/30 10:59:04:826,DS:0000002590,CS:40937,MA:00-1F-C6-67-2B-DF,EI:           
+ENVT0100,LM:2023/11/30 11:22:42:194,DS:0000002589,CS:44735,MA:00-1F-C6-67-2B-DF,EI:           
 SystemProperties {
 	sRC50Version="5.4.7"
 	sGUID="f72048ee-dcee-451c-9d8d-114b2c6feaf0"
 	bSimple=False
 	sCreated="2023/11/25 下午 04:55:48"
-	sLastModified="2023/11/30 下午 06:58:56"
-	bBuildComplete=False
+	sLastModified="2023/11/30 下午 07:22:40"
+	bBuildComplete=True
 	bRebuildRequired=False
 	bClearControllerProject=False
 	bClearGlobalPreserves=False
@@ -30,7 +30,7 @@ ProgramFile1 {
 	sName="Main.prg"
 	bCompiled=True
 	bStoreInController=True
-	sTimeSavedInController="2023/11/30 上午 10:53:26"
+	sTimeSavedInController="2023/11/30 上午 11:22:40"
 }
 nIncludeFileCount=0
 nPointFileCount=1

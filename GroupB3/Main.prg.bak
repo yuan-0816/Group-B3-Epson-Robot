@@ -1,5 +1,5 @@
 Double TokenHeight, BlockHeight, TrayDistance, InfeedHeight, PressureTime
-Integer Tokens, Blocks, TokenID, BlockID
+Integer Tokens, Blocks, TokenID, BlockID, Jengas
 
 ' 放料 
 Double ToTrayBlock_X, ToTrayBlock_Y, ToTrayBlock_Z
@@ -19,7 +19,7 @@ Boolean IsPick
 
 Function init
 	IsSim = True
-	IsPick = True
+	IsPick = False
 	
 	Print "Start Init"
 	Motor On
@@ -28,9 +28,12 @@ Function init
 	Tool 1
 	LocalClr 1
 	
-	' 0 1 2
+	' [0 1 2]
 	Blocks = 2
 	Tokens = 2
+	
+	' [0 1 2 3 4 5]
+	Jengas = 5
 	
 	' 吸嘴時間
 	PressureTime = .3
@@ -229,7 +232,7 @@ Function Pick_Infeed_Token
 	On 8
 	Wait PressureTime
 	'Move InfeedToken +Z(1 + (Tokens * TokenHeight)) /1
-	Move InfeedToken +X(-10) +Z(Tokens * TokenHeight + InfeedHeight) /1 CP
+	Move InfeedToken +X(-10) +Z(Tokens * TokenHeight + InfeedHeight) /1 'CP
 	
 Fend
 
@@ -268,12 +271,27 @@ Function Token_
 Fend
 
 Function Jenga
-	For BlockID = Blocks To 0 Step -1
+	Integer i
+	For i = 2 To 0 Step -1
 		Pick_Infeed_Block()
 		Alignment_Block()
-		Place_Tray_Block()
 		Blocks = Blocks - 1
-	Next BlockID
+		Move origin +Z(Jengas * BlockHeight + TrayDistance) /1
+		Move origin +Z(Jengas * BlockHeight) /1
+		Off 8
+		Wait PressureTime
+	
+		Pick_Infeed_Token()
+		Alignment_Token()
+		Tokens = Tokens - 1
+		Move origin +Z(Jengas * TokenHeight + TrayDistance) /1
+		Move origin +Z(Jengas * TokenHeight) /1
+		Off 8
+		Wait PressureTime
+		
+		
+		Jengas = Jengas - 1
+	Next i
 Fend
 
 Function main
