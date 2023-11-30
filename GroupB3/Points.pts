@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/11/28 00:45:12:682,DS:0000003631,CS:07206,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/11/30 10:58:58:516,DS:0000003631,CS:07203,MA:00-1F-C6-67-2B-DF,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
 nNumberOfPoints=17
@@ -42,7 +42,7 @@ Point3 {
 	nNumber=2
 	sLabel="local_origin"
 	sDescription=""
-	rX=280
+	rX=330
 	rY=-70
 	rZ=10
 	rU=0
@@ -60,7 +60,7 @@ Point4 {
 	nNumber=3
 	sLabel="local_X"
 	sDescription="local在x的方向"
-	rX=305
+	rX=355
 	rY=-70
 	rZ=10
 	rU=0
@@ -78,7 +78,7 @@ Point5 {
 	nNumber=4
 	sLabel="local_Y"
 	sDescription="local在Y的方向"
-	rX=280
+	rX=330
 	rY=-45
 	rZ=10
 	rU=0
