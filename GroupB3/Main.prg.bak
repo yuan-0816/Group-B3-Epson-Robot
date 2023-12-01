@@ -1,4 +1,4 @@
-Double TokenHeight, BlockHeight, TrayDistance, InfeedHeight, PressureTime
+Double Height, TrayDistance, InfeedHeight, PressureTime
 Integer Tokens, Blocks, TokenID, BlockID, Jengas
 
 ' 放料 
@@ -14,11 +14,14 @@ Double ToInfeedToken_X, ToInfeedToken_Y, ToInfeedToken_Z
 Double ToAlignBlock_X, ToAlignBlock_Y, ToAlignBlock_Z
 Double ToAlignToken_X, ToAlignToken_Y, ToAlignToken_Z
 
+' 疊疊樂
+Double ToJengas_X, ToJengas_Y, ToJengas_Z
+
 Boolean IsSim
 Boolean IsPick
 
 Function init
-	IsSim = True
+	IsSim = False
 	IsPick = False
 	
 	Print "Start Init"
@@ -28,20 +31,24 @@ Function init
 	Tool 1
 	LocalClr 1
 	
-	' [0 1 2]
-	Blocks = 2
-	Tokens = 2
+	Jengas = 0
 	
-	' [0 1 2 3 4 5]
-	Jengas = 5
+	If IsPick Then
+		' [0 1 2]
+		Blocks = 2
+		Tokens = 2
+	Else
+		' [0 1 2 3 4 5]
+		Blocks = 5
+		Tokens = 5
+	EndIf
 	
 	' 吸嘴時間
-	PressureTime = .3
-	
-	' 高度
-
+	PressureTime = .1
 
 	TrayDistance = 30.0
+
+	' Tray上高度
 	InfeedHeight = 50.0
 	
 	If IsSim Then
@@ -52,8 +59,7 @@ Function init
 		SpeedS 1000
 		AccelS 5000
 		
-		BlockHeight = 6.0
-		TokenHeight = 6.0
+		Height = 6.0
 			
 		' 相對local距離
 		' 放料 
@@ -68,20 +74,25 @@ Function init
 		' 取料
 		ToInfeedBlock_X = 128.50
 		ToInfeedBlock_Y = 0
-		ToInfeedBlock_Z = 10.0 + BlockHeight
+		ToInfeedBlock_Z = 10.0 + Height
 		
 		ToInfeedToken_X = 126.162
 		ToInfeedToken_Y = 26.34
-		ToInfeedToken_Z = 10.0 + TokenHeight
+		ToInfeedToken_Z = 10.0 + Height
 		
 		' 對齊
 		ToAlignBlock_X = 128.50
 		ToAlignBlock_Y = 119.0
-		ToAlignBlock_Z = 10.0 + BlockHeight
+		ToAlignBlock_Z = 10.0 + Height
 		
 		ToAlignToken_X = 126.162
 		ToAlignToken_Y = 145.34
-		ToAlignToken_Z = 10.0 + TokenHeight
+		ToAlignToken_Z = 10.0 + Height
+		
+		' 疊疊樂
+		ToJengas_X = 118.0
+		ToJengas_Y = 123.0
+		ToJengas_Z = 10.0 + Height
 		
 		local_origin = local_origin /NF
 		local_X = local_X /NF
@@ -91,41 +102,46 @@ Function init
 	Else
 		Print "Is Real World Now"
 
-		Speed 20
-		Accel 10, 10
-		SpeedS 200
-		AccelS 1000
+		Speed 50
+		Accel 50, 50
+		SpeedS 800
+		AccelS 4000
 	
-		BlockHeight = 6.1
-		TokenHeight = 6.1
+		Height = 6.0
 
 		' 相對local距離
 		' 放料 
-		ToTrayBlock_X = 0.0 - 0.38
-		ToTrayBlock_Y = 55.0 - 1.8
+		ToTrayBlock_X = -0.38
+		ToTrayBlock_Y = 55.1
 		ToTrayBlock_Z = 10.0
 		
-		ToTrayToken_X = 0 - 0.650
-		ToTrayToken_Y = 85.0 - 2.6
+		ToTrayToken_X = -0.651
+		ToTrayToken_Y = 85.250
 		ToTrayToken_Z = 10.0
 		
 		' 取料
-		ToInfeedBlock_X = 128.50
-		ToInfeedBlock_Y = 0 - 0.35
-		ToInfeedBlock_Z = 10.0 + BlockHeight
+		ToInfeedBlock_X = 129
+		ToInfeedBlock_Y = 0.447
+		ToInfeedBlock_Z = 10.0 + Height
 		
-		ToInfeedToken_X = 126.162 - 0.399
-		ToInfeedToken_Y = 26.34 - 1.25
-		ToInfeedToken_Z = 10.0 + TokenHeight
+		ToInfeedToken_X = 125.721
+		ToInfeedToken_Y = 26.742
+		ToInfeedToken_Z = 10.0 + Height
 		
 		' 對齊
-		ToAlignBlock_X = 128.50 - 0.95
-		ToAlignBlock_Y = 119.0 - 2.2
-		ToAlignBlock_Z = 10.0 + BlockHeight
+		ToAlignBlock_X = 127.1
+		ToAlignBlock_Y = 119.521
+		ToAlignBlock_Z = 10.0 + Height
 		
-		ToAlignToken_X = 126.162 - 1.648
-		ToAlignToken_Y = 145.34 - 3
-		ToAlignToken_Z = 10.0 + TokenHeight
+		ToAlignToken_X = 124.465
+		ToAlignToken_Y = 145.986
+		ToAlignToken_Z = 10.0 + Height
+		
+		' 疊疊樂
+		ToJengas_X = 118.0
+		ToJengas_Y = 123.0
+		ToJengas_Z = 10.0 + Height
+		
 		
 		RealLocalOrigin = RealLocalOrigin /NF
 		RealLocalX = RealLocalX /NF
@@ -143,47 +159,35 @@ Function init
 	AlignBlock = origin + XY(ToAlignBlock_X, ToAlignBlock_Y, ToAlignBlock_Z, 0) /1
 	AlignToken = origin + XY(ToAlignToken_X, ToAlignToken_Y, ToAlignToken_Z, 0) /1
 	
+	JengasPoint = origin + XY(ToJengas_X, ToJengas_Y, ToJengas_Z, 0) /1
+	
 	safepoint = origin + XY(50, 70, 120, 0) /1
-
-	'Go underworkcell
-
-	'Wait .5
 	
 	Print "Go safepoint"
 	Go safepoint /1
+	
+	Print "Is init"
 	
 Fend
 
 Function test
 	init()
 
-	Move TrayBlock +Z(3) /1
+	Move JengasPoint +Z(5) /1
 
 
-Fend
-
-Function realworldtest
-	init()
-	Move InfeedBlock /1
-	On 8
-	Wait 1
-	Move InfeedBlock +Z(30) /1
-	Move TrayBlock +Z(30) /1
-	Move TrayBlock /1
-	Off 8
-		
 Fend
 
 Function Pick_Infeed_Block
 	
 	'Pick Block from Infeed
 	Print "Picking Block from Infeed. Block ID = ", Blocks
-	Move InfeedBlock +Z(Blocks * BlockHeight + InfeedHeight) /1 CP
-	Move InfeedBlock +Z(Blocks * BlockHeight) /1 CP
+	Move InfeedBlock +Z(Blocks * Height + InfeedHeight) /1 CP
+	Move InfeedBlock +Z(Blocks * Height) /1 CP
 	On 8
 	Wait PressureTime
-	'Move InfeedBlock +Z(1 + (Blocks * BlockHeight)) /1
-	Move InfeedBlock +X(-10) +Y(5) +Z(Blocks * BlockHeight + InfeedHeight) /1 CP
+	'Move InfeedBlock +Z(1 + (Blocks * Height)) /1
+	Move InfeedBlock +X(-10) +Y(5) +Z(Blocks * Height + InfeedHeight) /1 CP
 	
 Fend
 
@@ -227,12 +231,12 @@ Function Pick_Infeed_Token
 	
 	'Pick Block from Infeed
 	Print "Picking Token from Infeed. Token ID = ", Tokens
-	Move InfeedToken +Z(Tokens * TokenHeight + InfeedHeight) /1 'CP
-	Move InfeedToken +Z(Tokens * TokenHeight) /1 'CP
+	Move InfeedToken +Z(Tokens * Height + InfeedHeight) /1 CP
+	Move InfeedToken +Z(Tokens * Height) /1 CP
 	On 8
 	Wait PressureTime
-	'Move InfeedToken +Z(1 + (Tokens * TokenHeight)) /1
-	Move InfeedToken +X(-10) +Z(Tokens * TokenHeight + InfeedHeight) /1 'CP
+	'Move InfeedToken +Z(1 + (Tokens * Height)) /1
+	Move InfeedToken +X(-10) +Z(Tokens * Height + InfeedHeight) /1 CP
 	
 Fend
 
@@ -272,25 +276,26 @@ Fend
 
 Function Jenga
 	Integer i
-	For i = 2 To 0 Step -1
+	For i = 5 To 0 Step -1
 		Pick_Infeed_Block()
-		Alignment_Block()
+
 		Blocks = Blocks - 1
-		Move origin +Z(Jengas * BlockHeight + TrayDistance) /1
-		Move origin +Z(Jengas * BlockHeight) /1
+		Move JengasPoint +Z(Jengas * Height + TrayDistance) /1 CP
+		Move JengasPoint +Z(Jengas * Height) /1
 		Off 8
 		Wait PressureTime
+		Move JengasPoint +Z(Jengas * Height + Height) /1 CP
+		Jengas = Jengas + 1
 	
 		Pick_Infeed_Token()
-		Alignment_Token()
+
 		Tokens = Tokens - 1
-		Move origin +Z(Jengas * TokenHeight + TrayDistance) /1
-		Move origin +Z(Jengas * TokenHeight) /1
+		Move JengasPoint +Z(Jengas * Height + TrayDistance) /1 CP
+		Move JengasPoint +Z(Jengas * Height) /1
 		Off 8
 		Wait PressureTime
-		
-		
-		Jengas = Jengas - 1
+		Move JengasPoint +Z(Jengas * Height + Height) /1 CP
+		Jengas = Jengas + 1
 	Next i
 Fend
 
@@ -304,5 +309,6 @@ Function main
 		Print "Jenga"
 		Jenga()
 	EndIf
+	Go safepoint /1
 Fend
 

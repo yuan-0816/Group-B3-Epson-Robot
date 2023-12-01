@@ -1,5 +1,5 @@
-ENVT0100,LM:2023/11/30 11:26:20:905,DS:0000001310,CS:13921,MA:00-1F-C6-67-2B-DF,EI:           
-sActiveChild="Main.prg"
+ENVT0100,LM:2023/12/01 08:56:24:837,DS:0000001440,CS:23568,MA:00-D8-61-87-1A-F7,EI:           
+sActiveChild="¹B¦\x"
 bMdiMaximized=False
 ProgramFile1 {
 	sName="Main.prg"
@@ -10,6 +10,17 @@ ProgramFile1 {
 		nTop=8
 		nWidth=818
 		nHeight=792
+	}
+}
+ProgramFile2 {
+	sName="test.prg"
+	bOpened=False
+	nWinState=0
+	Window {
+		nLeft=197
+		nTop=36
+		nWidth=1302
+		nHeight=624
 	}
 }
 nIncludeFileCount=0
@@ -37,12 +48,12 @@ CmdWindow {
 	nWinState=0
 }
 RunWindow {
-	bOpened=False
+	bOpened=True
 	Window {
-		nLeft=1014
-		nTop=536
+		nLeft=117
+		nTop=475
 		nWidth=608
-		nHeight=303
+		nHeight=300
 	}
 }
 IOLabelEditor {
@@ -83,10 +94,10 @@ Macros {
 	}
 }
 RobotMgr {
-	bOpened=False
+	bOpened=True
 	Window {
-		nLeft=324
-		nTop=227
+		nLeft=115
+		nTop=14
 		nWidth=689
 		nHeight=448
 	}

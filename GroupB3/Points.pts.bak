@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/11/28 00:45:12:682,DS:0000003631,CS:07206,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/01 07:08:18:132,DS:0000003631,CS:02080,MA:00-D8-61-87-1A-F7,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
 nNumberOfPoints=17
@@ -42,7 +42,7 @@ Point3 {
 	nNumber=2
 	sLabel="local_origin"
 	sDescription=""
-	rX=280
+	rX=330
 	rY=-70
 	rZ=10
 	rU=0
@@ -60,7 +60,7 @@ Point4 {
 	nNumber=3
 	sLabel="local_X"
 	sDescription="local在x的方向"
-	rX=305
+	rX=355
 	rY=-70
 	rZ=10
 	rU=0
@@ -78,7 +78,7 @@ Point5 {
 	nNumber=4
 	sLabel="local_Y"
 	sDescription="local在Y的方向"
-	rX=280
+	rX=330
 	rY=-45
 	rZ=10
 	rU=0
@@ -240,12 +240,12 @@ Point14 {
 	nNumber=14
 	sLabel="RealLocalOrigin"
 	sDescription=""
-	rX=431.933
-	rY=-78.649
-	rZ=-11.004
-	rU=0.011
-	rV=0.49
-	rW=-179.761
+	rX=444.851
+	rY=-80.451
+	rZ=45.707
+	rU=-0.002
+	rV=0.323
+	rW=179.967
 	nLocal=0
 	nHand=1
 	nElbow=1
@@ -258,12 +258,12 @@ Point15 {
 	nNumber=15
 	sLabel="RealLocalX"
 	sDescription=""
-	rX=457.14
-	rY=-79.23
-	rZ=-12.466
-	rU=0.011
-	rV=0.49
-	rW=-179.758
+	rX=469.831
+	rY=-80.499
+	rZ=45.394
+	rU=-0.004
+	rV=0.325
+	rW=179.957
 	nLocal=0
 	nHand=1
 	nElbow=1
@@ -276,12 +276,12 @@ Point16 {
 	nNumber=16
 	sLabel="RealLocalY"
 	sDescription=""
-	rX=432.033
-	rY=-54.599
-	rZ=-11.102
-	rU=0.011
-	rV=0.49
-	rW=-179.761
+	rX=444.826
+	rY=-55.604
+	rZ=45.9
+	rU=-0.002
+	rV=0.322
+	rW=179.967
 	nLocal=0
 	nHand=1
 	nElbow=1
