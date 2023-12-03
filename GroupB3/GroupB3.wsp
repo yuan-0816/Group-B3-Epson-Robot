@@ -1,5 +1,5 @@
-ENVT0100,LM:2023/12/01 08:56:24:837,DS:0000001440,CS:23568,MA:00-D8-61-87-1A-F7,EI:           
-sActiveChild="¹B¦\x"
+ENVT0100,LM:2023/12/01 09:00:41:062,DS:0000001445,CS:31020,MA:00-D8-61-87-1A-F7,EI:           
+sActiveChild="Main.prg"
 bMdiMaximized=False
 ProgramFile1 {
 	sName="Main.prg"
@@ -48,7 +48,7 @@ CmdWindow {
 	nWinState=0
 }
 RunWindow {
-	bOpened=True
+	bOpened=False
 	Window {
 		nLeft=117
 		nTop=475
@@ -94,7 +94,7 @@ Macros {
 	}
 }
 RobotMgr {
-	bOpened=True
+	bOpened=False
 	Window {
 		nLeft=115
 		nTop=14
