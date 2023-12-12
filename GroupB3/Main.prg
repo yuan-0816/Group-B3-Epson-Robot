@@ -22,13 +22,13 @@ Boolean IsPick
 
 Function init
 	IsSim = False
-	IsPick = True
+	IsPick = False
 	
 	Print "Start Init"
 	Motor On
 	Power High
 	Off 8
-	Tool 1
+	Tool 2
 	LocalClr 1
 	
 	Jengas = 0
@@ -111,30 +111,30 @@ Function init
 
 		' 相對local距離
 		' 放料 
-		ToTrayBlock_X = -0.38
-		ToTrayBlock_Y = 55.1
+		ToTrayBlock_X = 0.919
+		ToTrayBlock_Y = 56.3
 		ToTrayBlock_Z = 10.0
 		
-		ToTrayToken_X = -0.651
-		ToTrayToken_Y = 85.250
+		ToTrayToken_X = 0.798
+		ToTrayToken_Y = 86.750
 		ToTrayToken_Z = 10.0
 		
 		' 取料
-		ToInfeedBlock_X = 129
-		ToInfeedBlock_Y = 0.447
+		ToInfeedBlock_X = 127.713
+		ToInfeedBlock_Y = 1.248
 		ToInfeedBlock_Z = 10.0 + Height
 		
-		ToInfeedToken_X = 125.721
-		ToInfeedToken_Y = 26.742
+		ToInfeedToken_X = 125.272
+		ToInfeedToken_Y = 27.742
 		ToInfeedToken_Z = 10.0 + Height
 		
 		' 對齊
-		ToAlignBlock_X = 127.1
-		ToAlignBlock_Y = 119.521
+		ToAlignBlock_X = 127.401
+		ToAlignBlock_Y = 121.221
 		ToAlignBlock_Z = 10.0 + Height
 		
-		ToAlignToken_X = 124.465
-		ToAlignToken_Y = 145.986
+		ToAlignToken_X = 124.466
+		ToAlignToken_Y = 147.936
 		ToAlignToken_Z = 10.0 + Height
 		
 		' 疊疊樂
@@ -173,7 +173,7 @@ Fend
 Function test
 	init()
 
-	Move JengasPoint +Z(5) /1
+	Move JengasPoint +Z(3) /1
 
 
 Fend
