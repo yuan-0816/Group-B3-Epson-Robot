@@ -1,4 +1,6 @@
-ENVT0100,LM:2023/12/21 08:39:55:083,DS:0000001398,CS:07989,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/21 10:31:06:073,DS:0000001442,CS:13402,MA:00-D8-61-87-1A-F7,EI:           
+sActiveChild="Main.prg"
+bMdiMaximized=False
 ProgramFile1 {
 	sName="Main.prg"
 	bOpened=True
@@ -28,10 +30,10 @@ PointFile1 {
 	bOpened=False
 	nWinState=0
 	Window {
-		nLeft=202
-		nTop=149
+		nLeft=90
+		nTop=69
 		nWidth=1477
-		nHeight=572
+		nHeight=723
 	}
 }
 sActiveWindow="main.prg"
