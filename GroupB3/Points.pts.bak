@@ -1,7 +1,7 @@
-ENVT0100,LM:2023/12/01 08:11:32:553,DS:0000003828,CS:00302,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/23 09:21:47:471,DS:0000004037,CS:21054,MA:00-D8-61-87-1A-F7,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
-nNumberOfPoints=18
+nNumberOfPoints=19
 Point1 {
 	nNumber=0
 	sLabel="underworkcell"
@@ -258,12 +258,12 @@ Point15 {
 	nNumber=14
 	sLabel="RealLocalOrigin"
 	sDescription=""
-	rX=444.851
-	rY=-80.451
-	rZ=45.707
-	rU=-0.002
-	rV=0.323
-	rW=179.967
+	rX=442.751
+	rY=-87.278
+	rZ=-3.454
+	rU=-0.006
+	rV=0.281
+	rW=-179.997
 	nLocal=0
 	nHand=1
 	nElbow=1
@@ -276,12 +276,12 @@ Point16 {
 	nNumber=15
 	sLabel="RealLocalX"
 	sDescription=""
-	rX=469.831
-	rY=-80.499
-	rZ=45.394
-	rU=-0.004
-	rV=0.325
-	rW=179.957
+	rX=467.602
+	rY=-87.228
+	rZ=-3.527
+	rU=-0.006
+	rV=0.281
+	rW=-179.997
 	nLocal=0
 	nHand=1
 	nElbow=1
@@ -294,12 +294,12 @@ Point17 {
 	nNumber=16
 	sLabel="RealLocalY"
 	sDescription=""
-	rX=444.826
-	rY=-55.604
-	rZ=45.9
-	rU=-0.002
-	rV=0.322
-	rW=179.967
+	rX=442.501
+	rY=-61.729
+	rZ=-3.654
+	rU=-0.006
+	rV=0.281
+	rW=-179.997
 	nLocal=0
 	nHand=1
 	nElbow=1
@@ -309,8 +309,26 @@ Point17 {
 	bSimVisible=False
 }
 Point18 {
+	nNumber=17
+	sLabel="StartPoint"
+	sDescription=""
+	rX=0
+	rY=0
+	rZ=0
+	rU=0
+	rV=0
+	rW=0
+	nLocal=0
+	nHand=1
+	nElbow=1
+	nWrist=1
+	nJ4Flag=0
+	nJ6Flag=0
+	bSimVisible=False
+}
+Point19 {
 	nNumber=18
-	sLabel=""
+	sLabel="EndPoint"
 	sDescription=""
 	rX=0
 	rY=0
