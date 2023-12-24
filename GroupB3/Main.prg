@@ -7,7 +7,7 @@ Function init
 	Motor On
 	Power High
 	Off 8
-	Tool 2	' 校點z=100, 實際z=97
+	Tool 2	' ["1": "校點z=100", "2": "實際z=95"]
 	LocalClr 1
 	
 	Jengas = 0
@@ -82,31 +82,31 @@ Function init
 
 		' 相對local距離
 		' 取料
-		ToInfeedBlock_X = 126.963
-		ToInfeedBlock_Y = -0.252
+		ToInfeedBlock_X = 127.462
+		ToInfeedBlock_Y = -0.852
 		ToInfeedBlock_Z = 10.0 + Height
 		
-		ToInfeedToken_X = 124.322
+		ToInfeedToken_X = 125.071
 		ToInfeedToken_Y = 26.192
 		ToInfeedToken_Z = 10.0 + Height
 		
 		' 對齊
-		ToAlignBlock_X = 127.601
-		ToAlignBlock_Y = 120.271
+		ToAlignBlock_X = 128.200
+		ToAlignBlock_Y = 119.471
 		ToAlignBlock_Z = 10.0 + Height
 		
-		ToAlignToken_X = 125.016
+		ToAlignToken_X = 125.815
 		ToAlignToken_Y = 145.936
 		ToAlignToken_Z = 10.0 + Height
 		
 		
 		' 放料 
-		ToTrayBlock_X = 1.168
-		ToTrayBlock_Y = 55.7
+		ToTrayBlock_X = 0.668
+		ToTrayBlock_Y = 55.700
 		ToTrayBlock_Z = 10.0
 		
-		ToTrayToken_X = 1.197
-		ToTrayToken_Y = 85.8
+		ToTrayToken_X = 0.798
+		ToTrayToken_Y = 86.050
 		ToTrayToken_Z = 10.0
 		
 		
@@ -123,6 +123,10 @@ Function init
 		origin = RealLocalOrigin @1 ' real word
 	EndIf
 	
+	ArcPointX = ToTrayBlock_X + (TrayDistance * 2) + 30
+	ArcPointY = (ToInfeedBlock_Y + ToAlignBlock_Y) /2
+	ArcPointHeight = 10.0
+	
 	InfeedBlock = origin + XY(ToInfeedBlock_X, ToInfeedBlock_Y, ToInfeedBlock_Z, 0) /1
 	InfeedToken = origin + XY(ToInfeedToken_X, ToInfeedToken_Y, ToInfeedToken_Z, 0) /1
 	
@@ -134,18 +138,61 @@ Function init
 	
 	JengasPoint = origin + XY(ToJengas_X, ToJengas_Y, ToJengas_Z, 0) /1
 	
-	ArcPoint = origin + XY(ToTrayBlock_X + (TrayDistance * 2) + 20, ToTrayBlock_Y + (TrayDistance / 2), ToTrayBlock_Z + Height * 5, 0) /1
+	ArcPoint = origin + XY(ArcPointX, ArcPointY, ArcPointHeight, 0) /1
 	
 		
-	StartPoint = InfeedBlock + XY(0, 0, Height * 3 + InfeedHeight, 0) /1
+	
 	
 	If IsPick Then
+		StartPoint = InfeedBlock + XY(0, 0, Height * 3 + InfeedHeight, 0) /1
 		EndPoint = TrayToken + XY(0, 0, InfeedHeight, 0) /1
 	Else
+		StartPoint = InfeedBlock + XY(0, 0, Height * 6 + InfeedHeight, 0) /1
 		EndPoint = JengasPoint + XY(0, 0, 12 * Height + 10, 0) /1
 	EndIf
 	
 	safepoint = origin + XY(50, 70, 120, 0) /1
+	
+Fend
+
+Function Offset_pos
+	init()
+	Go safepoint /1
+	Go StartPoint /1
+	
+	
+	
+	Move InfeedBlock +Z(2 * Height + InfeedHeight) /1 CP
+	Move InfeedBlock +Z(2 * Height) /1 CP
+	On 8
+	Wait PressureTime
+	'Move InfeedBlock +Z(1 + (Blocks * Height)) /1
+	
+	Move InfeedBlock +X(-10) +Y(5) +Z(Blocks * 2 + InfeedHeight) /1 CP
+	
+	
+	Arc ArcPoint /1, AlignBlock +Z(InfeedHeight) /1 CP
+	
+    'Move AlignBlock +X(-10) +Y(10) +Z(50) /1 CP
+
+	Move AlignBlock /1
+	Off 8
+	'Move AlignBlock +X(10) /1
+	Move AlignBlock +X(10) +Y(-5) /1 CP
+	Move AlignBlock +X(10) +Y(-5) +Z(5) /1 CP
+	Move AlignBlock +Z(5) /1 CP
+	Move AlignBlock /1 CP
+	On 8
+	Wait PressureTime
+	Move AlignBlock +X(-10) +Y(10) +Z(20) /1 CP
+	
+	
+	
+	
+	
+	'Tool 1
+	'Go safepoint /1
+	'Go ArcPoint +Z(0) /1
 	
 Fend
 
@@ -217,7 +264,7 @@ Function Pick_Infeed_Block
 	Wait PressureTime
 	'Move InfeedBlock +Z(1 + (Blocks * Height)) /1
 	
-	Move InfeedBlock +X(-10) +Y(5) +Z(Blocks * Height + InfeedHeight) /1 CP
+	Move InfeedBlock +X(-10) +Y(5) +Z(Blocks * Height + InfeedHeight + 10) /1 CP
 	
 	 
 Fend
@@ -226,15 +273,18 @@ Function Alignment_Block
 	'Alignment Block
 	Print "Aligning Block. Block ID = ", Blocks
 	
+	ArcPointHeight = Height * Blocks + InfeedHeight
+	ArcPoint = origin + XY(ArcPointX, ArcPointY, ArcPointHeight, 0) /1
+	
 	ChangeSpeedFast()
-	Arc ArcPoint /1, AlignBlock +Z(InfeedHeight) /1 CP
+	Arc ArcPoint /1, AlignBlock +X(-5) +Y(5) /1 CP
 	
     'Move AlignBlock +X(-10) +Y(10) +Z(50) /1 CP
     
     ChangeSpeedSlow()
 	Move AlignBlock /1
 	Off 8
-	'Move AlignBlock +X(10) /1
+	Move AlignBlock +X(10) /1
 	Move AlignBlock +X(10) +Y(-5) /1 CP
 	Move AlignBlock +X(10) +Y(-5) +Z(5) /1 CP
 	Move AlignBlock +Z(5) /1 CP
@@ -335,8 +385,12 @@ Function Jenga
 
 		Blocks = Blocks - 1
 		ChangeSpeedFast()
-		Arc ArcPoint /1, JengasPoint +Z(Jengas * Height + TrayDistance + 10) /1 CP
-		'Move JengasPoint +Z(Jengas * Height + TrayDistance) /1 CP
+		
+		ArcPointHeight = 5.0 + Height * Blocks
+		ArcPoint = origin + XY(ArcPointX, ArcPointY, ArcPointHeight, 0) /1
+		Arc ArcPoint /1, JengasPoint +Z(Jengas * Height + InfeedHeight) /1 CP
+		'Move JengasPoint +Z(Jengas * Height + InfeedHeight) /1 CP
+		
 		ChangeSpeedSlow()
 		Move JengasPoint +Z(Jengas * Height) /1
 		Off 8
@@ -348,7 +402,7 @@ Function Jenga
 
 		Tokens = Tokens - 1
 		ChangeSpeedFast()
-		Move JengasPoint +Z(Jengas * Height + TrayDistance + 10) /1 CP
+		Move JengasPoint +Z(Jengas * Height + InfeedHeight) /1 CP
 		ChangeSpeedSlow()
 		Move JengasPoint +Z(Jengas * Height) /1
 		Off 8
@@ -356,6 +410,65 @@ Function Jenga
 		Move JengasPoint +Z(Jengas * Height + JengaHeight) /1 CP
 		Jengas = Jengas + 1
 	Next i
+Fend
+
+Function Back
+	Go safepoint /1
+	Integer i, BackBlock, BackToken, result
+	If IsPick Then
+		For i = 2 To 0 Step -1
+			Move TrayBlock +X(i * TrayDistance) +Z(InfeedHeight) /1 CP
+			Move TrayBlock +X(i * TrayDistance) /1 CP
+			On 8
+			Wait PressureTime
+			Move TrayBlock +X(i * TrayDistance) +Z(InfeedHeight) /1
+			Move InfeedBlock +X(-5) +Y(3) +Z((2 - i) * Height + 3) /1
+			Off 8
+			Wait PressureTime
+		Next i
+		For i = 2 To 0 Step -1
+			Move TrayToken +X(i * TrayDistance) +Z(InfeedHeight) /1 CP
+			Move TrayToken +X(i * TrayDistance) /1 CP
+			On 8
+			Wait PressureTime
+			Move TrayToken +X(i * TrayDistance) +Z(InfeedHeight) /1
+			Move InfeedToken +X(-5) +Z((2 - i) * Height + 3) /1
+			Off 8
+			Wait PressureTime
+		Next i
+	Else
+		BackBlock = 0
+		BackToken = 0
+		For i = 11 To 0 Step -1
+			result = i Mod 2
+			
+			Move JengasPoint +Z(11 * Height + InfeedHeight) /1 CP
+			Move JengasPoint +Z(i * Height) /1 CP
+			On 8
+			Wait PressureTime
+			Move JengasPoint +Z(i * Height + InfeedHeight) /1 CP
+
+
+			If result = 1 Then
+				Move InfeedToken +X(-50) +Y(3) +Z(11 * Height + InfeedHeight) /1
+				Move InfeedToken +X(-50) +Y(3) +Z(BackToken * Height + 3 - 10) /1
+				Off 8
+				Wait PressureTime
+				Move InfeedToken +X(-50) +Y(3) +Z(11 * Height + InfeedHeight) /1
+				BackToken = BackToken + 1
+						
+			Else
+				Move InfeedBlock +X(-50) +Z(11 * Height + InfeedHeight) /1
+				Move InfeedBlock +X(-50) +Z(BackBlock * Height + 3 - 10) /1
+				Off 8
+				Wait PressureTime
+				Move InfeedBlock +X(-50) +Z(11 * Height + InfeedHeight) /1
+				BackBlock = BackBlock + 1
+			EndIf
+		Next i
+	EndIf
+
+	Go safepoint /1
 Fend
 
 Function main
@@ -376,16 +489,21 @@ Function main
 		' Pick and place init
 		If Sw(green) = True Then
 			IsPick = True
-			init()
+			'init()
 			init_position()
 		EndIf
 		
 		' Jenga init
 		If Sw(ORANGE) = True Then
 			IsPick = False
-			init()
+'			init()
 			init_position()
 		EndIf
+		
+		If Sw(RED) = True Then
+			Back()
+		EndIf
+		
 		
 	Loop
 	

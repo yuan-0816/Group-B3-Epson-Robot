@@ -1,6 +1,6 @@
 #define Height 6.0
 #define TrayDistance 30.0
-#define InfeedHeight 20.0
+#define InfeedHeight 15.0
 #define PressureTime 0.1
 
 #define RED 0
@@ -30,3 +30,6 @@ Global Double ToJengas_X, ToJengas_Y, ToJengas_Z
 
 Global Boolean IsSim
 Global Boolean IsPick
+
+Global Double ArcPointHeight
+Global Double ArcPointX, ArcPointY

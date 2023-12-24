@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/12/23 09:50:41:221,DS:0000004231,CS:27751,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/24 07:58:30:757,DS:0000004189,CS:24128,MA:00-D8-61-87-1A-F7,EI:           
 sVersion="1.0.0"
 nDisplayMode=4
 nNumberOfPoints=20
@@ -258,12 +258,12 @@ Point15 {
 	nNumber=14
 	sLabel="RealLocalOrigin"
 	sDescription=""
-	rX=442.751
-	rY=-87.278
-	rZ=-3.454
-	rU=-0.006
-	rV=0.281
-	rW=-179.997
+	rX=445.101
+	rY=-82.325
+	rZ=-4.983
+	rU=0
+	rV=0
+	rW=180
 	nLocal=0
 	nHand=1
 	nElbow=1
@@ -276,12 +276,12 @@ Point16 {
 	nNumber=15
 	sLabel="RealLocalX"
 	sDescription=""
-	rX=467.602
-	rY=-87.228
-	rZ=-3.527
-	rU=-0.006
-	rV=0.281
-	rW=-179.997
+	rX=470.101
+	rY=-82.225
+	rZ=-5.024
+	rU=0
+	rV=0
+	rW=180
 	nLocal=0
 	nHand=1
 	nElbow=1
@@ -294,12 +294,12 @@ Point17 {
 	nNumber=16
 	sLabel="RealLocalY"
 	sDescription=""
-	rX=442.501
-	rY=-61.729
-	rZ=-3.654
-	rU=-0.006
-	rV=0.281
-	rW=-179.997
+	rX=445.613
+	rY=-56.983
+	rZ=-4.899
+	rU=0
+	rV=0
+	rW=180
 	nLocal=0
 	nHand=1
 	nElbow=1

@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/12/23 13:28:45:362,DS:0000001443,CS:17180,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/24 11:21:02:364,DS:0000001441,CS:01547,MA:00-D8-61-87-1A-F7,EI:           
 sActiveChild="Main.prg"
 bMdiMaximized=False
 ProgramFile1 {
@@ -6,16 +6,16 @@ ProgramFile1 {
 	bOpened=True
 	nWinState=0
 	Window {
-		nLeft=694
+		nLeft=742
 		nTop=5
-		nWidth=1018
+		nWidth=970
 		nHeight=801
 	}
 }
 nIncludeFileCount=1
 IncludeFile1 {
 	sName="DefineVar.inc"
-	bOpened=False
+	bOpened=True
 	nWinState=0
 	Window {
 		nLeft=47
@@ -45,15 +45,15 @@ CmdWindow {
 		nWidth=1291
 		nHeight=612
 	}
-	nWinState=1
+	nWinState=0
 }
 RunWindow {
 	bOpened=False
 	Window {
-		nLeft=48
-		nTop=15
-		nWidth=608
-		nHeight=418
+		nLeft=258
+		nTop=457
+		nWidth=464
+		nHeight=341
 	}
 }
 IOLabelEditor {
@@ -96,8 +96,8 @@ Macros {
 RobotMgr {
 	bOpened=False
 	Window {
-		nLeft=42
-		nTop=255
+		nLeft=30
+		nTop=1
 		nWidth=689
 		nHeight=448
 	}
