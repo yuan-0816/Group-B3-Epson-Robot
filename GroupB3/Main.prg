@@ -119,6 +119,7 @@ Function init
 		RealLocalOrigin = RealLocalOrigin /NF
 		RealLocalX = RealLocalX /NF
 		RealLocalY = RealLocalY /NF
+		
 		Local 1, RealLocalOrigin, RealLocalX, RealLocalY, X ' real word
 		origin = RealLocalOrigin @1 ' real word
 	EndIf
@@ -157,42 +158,38 @@ Fend
 
 Function Offset_pos
 	init()
+	Tool 1
+	
 	Go safepoint /1
-	Go StartPoint /1
-	
-	
-	
-	Move InfeedBlock +Z(2 * Height + InfeedHeight) /1 CP
-	Move InfeedBlock +Z(2 * Height) /1 CP
-	On 8
-	Wait PressureTime
-	'Move InfeedBlock +Z(1 + (Blocks * Height)) /1
-	
-	Move InfeedBlock +X(-10) +Y(5) +Z(Blocks * 2 + InfeedHeight) /1 CP
-	
-	
-	Arc ArcPoint /1, AlignBlock +Z(InfeedHeight) /1 CP
-	
-    'Move AlignBlock +X(-10) +Y(10) +Z(50) /1 CP
+	Go ArcPoint +Z(0) /1
 
-	Move AlignBlock /1
-	Off 8
-	'Move AlignBlock +X(10) /1
-	Move AlignBlock +X(10) +Y(-5) /1 CP
-	Move AlignBlock +X(10) +Y(-5) +Z(5) /1 CP
-	Move AlignBlock +Z(5) /1 CP
-	Move AlignBlock /1 CP
-	On 8
-	Wait PressureTime
-	Move AlignBlock +X(-10) +Y(10) +Z(20) /1 CP
-	
-	
-	
-	
-	
-	'Tool 1
-	'Go safepoint /1
-	'Go ArcPoint +Z(0) /1
+
+'	Go safepoint /1
+'	Go StartPoint /1
+'	Move InfeedBlock +Z(2 * Height + InfeedHeight) /1 CP
+'	Move InfeedBlock +Z(2 * Height) /1 CP
+'	On 8
+'	Wait PressureTime
+'	'Move InfeedBlock +Z(1 + (Blocks * Height)) /1
+'	
+'	Move InfeedBlock +X(-10) +Y(5) +Z(Blocks * 2 + InfeedHeight) /1 CP
+'	
+'	
+'	Arc ArcPoint /1, AlignBlock +Z(InfeedHeight) /1 CP
+'	
+'    'Move AlignBlock +X(-10) +Y(10) +Z(50) /1 CP
+'
+'	Move AlignBlock /1
+'	Off 8
+'	'Move AlignBlock +X(10) /1
+'	Move AlignBlock +X(10) +Y(-5) /1 CP
+'	Move AlignBlock +X(10) +Y(-5) +Z(5) /1 CP
+'	Move AlignBlock +Z(5) /1 CP
+'	Move AlignBlock /1 CP
+'	On 8
+'	Wait PressureTime
+'	Move AlignBlock +X(-10) +Y(10) +Z(20) /1 CP
+'	
 	
 Fend
 
@@ -213,15 +210,19 @@ Function init_position
 Fend
 
 Function ChangeSpeedFast
-	If IsPick Then
+	If IsSim Then
+		Speed 50
+		Accel 50, 50
+		
+		' Move
+		SpeedS 1000
+		AccelS 5000
+	Else
 		' Go
 	    Speed 100
 		Accel 100, 100
 		
 		' Move, Arc
-		SpeedS 2000
-		AccelS 25000
-	Else
 		SpeedS 2000
 		AccelS 25000
 	EndIf
@@ -507,5 +508,22 @@ Function main
 		
 	Loop
 	
+Fend
+
+
+' For GUI 
+Function GUI_working_init
+	Wait 2
+Fend
+
+
+Function GUI_working
+	Integer i
+	For i = 3 To 0 Step -1
+		Wait 1
+		On 8
+		Wait 2
+		Off 8
+	Next
 Fend
 

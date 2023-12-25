@@ -119,6 +119,7 @@ Function init
 		RealLocalOrigin = RealLocalOrigin /NF
 		RealLocalX = RealLocalX /NF
 		RealLocalY = RealLocalY /NF
+		
 		Local 1, RealLocalOrigin, RealLocalX, RealLocalY, X ' real word
 		origin = RealLocalOrigin @1 ' real word
 	EndIf
@@ -213,15 +214,19 @@ Function init_position
 Fend
 
 Function ChangeSpeedFast
-	If IsPick Then
+	If IsSim Then
+		Speed 50
+		Accel 50, 50
+		
+		' Move
+		SpeedS 1000
+		AccelS 5000
+	Else
 		' Go
 	    Speed 100
 		Accel 100, 100
 		
 		' Move, Arc
-		SpeedS 2000
-		AccelS 25000
-	Else
 		SpeedS 2000
 		AccelS 25000
 	EndIf
@@ -450,19 +455,19 @@ Function Back
 
 
 			If result = 1 Then
-				Move InfeedToken +X(-20) +Y(3) +Z(11 * Height + InfeedHeight) /1
-				Move InfeedToken +X(-20) +Y(3) +Z(BackToken * Height + 3 - 10) /1
+				Move InfeedToken +X(-50) +Y(3) +Z(11 * Height + InfeedHeight) /1
+				Move InfeedToken +X(-50) +Y(3) +Z(BackToken * Height + 3 - 10) /1
 				Off 8
 				Wait PressureTime
-				Move InfeedToken +X(-20) +Y(3) +Z(11 * Height + InfeedHeight) /1
+				Move InfeedToken +X(-50) +Y(3) +Z(11 * Height + InfeedHeight) /1
 				BackToken = BackToken + 1
 						
 			Else
-				Move InfeedBlock +X(-20) +Z(11 * Height + InfeedHeight) /1
-				Move InfeedBlock +X(-20) +Z(BackBlock * Height + 3 - 10) /1
+				Move InfeedBlock +X(-50) +Z(11 * Height + InfeedHeight) /1
+				Move InfeedBlock +X(-50) +Z(BackBlock * Height + 3 - 10) /1
 				Off 8
 				Wait PressureTime
-				Move InfeedBlock +X(-20) +Z(11 * Height + InfeedHeight) /1
+				Move InfeedBlock +X(-50) +Z(11 * Height + InfeedHeight) /1
 				BackBlock = BackBlock + 1
 			EndIf
 		Next i
@@ -507,5 +512,22 @@ Function main
 		
 	Loop
 	
+Fend
+
+
+' For GUI 
+Function GUI_working_init
+	Wait 2
+Fend
+
+
+Function GUI_working
+	Integer i
+	For i = 3 To 0 Step -1
+		Wait 1
+		On 8
+		Wait 2
+		Off 8
+	Next
 Fend
 

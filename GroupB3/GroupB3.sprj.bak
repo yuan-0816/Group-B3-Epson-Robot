@@ -1,11 +1,11 @@
-ENVT0100,LM:2023/12/24 11:18:57:559,DS:0000002710,CS:09190,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/25 19:03:38:956,DS:0000002892,CS:13581,MA:00-D8-61-87-1A-F7,EI:           
 SystemProperties {
 	sRC50Version="5.4.7"
 	sGUID="f72048ee-dcee-451c-9d8d-114b2c6feaf0"
 	bSimple=False
 	sCreated="2023/11/25 下午 04:55:48"
-	sLastModified="2023/12/24 下午 07:18:55"
-	bBuildComplete=True
+	sLastModified="2023/12/26 上午 03:03:38"
+	bBuildComplete=False
 	bRebuildRequired=False
 	bClearControllerProject=False
 	bClearGlobalPreserves=False
@@ -25,23 +25,29 @@ UserErrorsFile {
 	sName="UserErrors.dat"
 	nChecksum=0
 }
-nProgramFileCount=1
+nProgramFileCount=2
 ProgramFile1 {
 	sName="Main.prg"
+	bCompiled=False
+	bStoreInController=True
+	sTimeSavedInController="2023/12/25 下午 07:00:20"
+}
+ProgramFile2 {
+	sName="Control.prg"
 	bCompiled=True
 	bStoreInController=True
-	sTimeSavedInController="2023/12/24 上午 11:17:58"
+	sTimeSavedInController="2023/12/25 下午 06:53:05"
 }
 nIncludeFileCount=1
 IncludeFile1 {
 	sName="DefineVar.inc"
 	bStoreInController=True
-	sTimeSavedInController="2023/12/24 上午 09:35:58"
+	sTimeSavedInController="2023/12/25 下午 05:49:56"
 }
 nPointFileCount=1
 PointFile1 {
 	sName="Points.pts"
-	sTimeSavedInController="2023/12/24 上午 07:58:30"
+	sTimeSavedInController="2023/12/25 下午 06:16:18"
 }
 OperatorSettings {
 	OperatorWindow {
@@ -138,4 +144,7 @@ IOCustomView3 {
 	nNumberOfRows=0
 }
 nVisFileCount=0
-nGuiBuilderFileCount=0
+nGuiBuilderFileCount=1
+GuiBuilderFile1 {
+	sName="GroupB3.gui"
+}

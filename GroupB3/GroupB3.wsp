@@ -1,4 +1,4 @@
-ENVT0100,LM:2023/12/24 11:21:02:364,DS:0000001441,CS:01547,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/25 19:06:47:623,DS:0000001588,CS:30787,MA:00-D8-61-87-1A-F7,EI:           
 sActiveChild="Main.prg"
 bMdiMaximized=False
 ProgramFile1 {
@@ -6,21 +6,32 @@ ProgramFile1 {
 	bOpened=True
 	nWinState=0
 	Window {
-		nLeft=742
-		nTop=5
-		nWidth=970
-		nHeight=801
+		nLeft=120
+		nTop=27
+		nWidth=987
+		nHeight=772
+	}
+}
+ProgramFile2 {
+	sName="Control.prg"
+	bOpened=False
+	nWinState=0
+	Window {
+		nLeft=46
+		nTop=-2
+		nWidth=874
+		nHeight=813
 	}
 }
 nIncludeFileCount=1
 IncludeFile1 {
 	sName="DefineVar.inc"
-	bOpened=True
+	bOpened=False
 	nWinState=0
 	Window {
-		nLeft=47
-		nTop=25
-		nWidth=794
+		nLeft=792
+		nTop=21
+		nWidth=853
 		nHeight=752
 	}
 }
@@ -28,17 +39,17 @@ nPointFileCount=1
 PointFile1 {
 	sName="Points.pts"
 	bOpened=False
-	nWinState=0
+	nWinState=1
 	Window {
-		nLeft=90
-		nTop=69
+		nLeft=106
+		nTop=88
 		nWidth=1477
 		nHeight=723
 	}
 }
 sActiveWindow="main.prg"
 CmdWindow {
-	bOpened=True
+	bOpened=False
 	Window {
 		nLeft=23
 		nTop=40
@@ -48,12 +59,12 @@ CmdWindow {
 	nWinState=0
 }
 RunWindow {
-	bOpened=False
+	bOpened=True
 	Window {
-		nLeft=258
-		nTop=457
-		nWidth=464
-		nHeight=341
+		nLeft=1033
+		nTop=542
+		nWidth=608
+		nHeight=300
 	}
 }
 IOLabelEditor {
@@ -69,10 +80,10 @@ IOLabelEditor {
 IOMonitor {
 	bOpened=False
 	Window {
-		nLeft=-2
-		nTop=540
+		nLeft=186
+		nTop=148
 		nWidth=478
-		nHeight=347
+		nHeight=500
 	}
 }
 TaskMgr {
@@ -96,8 +107,8 @@ Macros {
 RobotMgr {
 	bOpened=False
 	Window {
-		nLeft=30
-		nTop=1
+		nLeft=529
+		nTop=230
 		nWidth=689
 		nHeight=448
 	}

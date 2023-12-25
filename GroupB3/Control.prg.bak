@@ -1,0 +1,137 @@
+#include "DefineVar.inc"
+
+Function control_Load(Sender$ As String)
+	IsSim = True
+	Off INIT_LED ' init LED
+	Off WORKING_LED ' working LED
+
+	GUI_Pick_and_place$ = "D:\EpsonRC50\projects\B3 Epson Robot\GroupB3\GUI_img\PickAndPlace.png"
+	GUI_Jengas$ = "D:\EpsonRC50\projects\B3 Epson Robot\GroupB3\GUI_img\Jenga.png"
+	GUI_Defult$ = "D:\EpsonRC50\projects\B3 Epson Robot\GroupB3\GUI_img\default.png"
+		
+	GSet control.Result_img.Image, GUI_Defult$
+	
+	' Button
+	GSet control.InitPickAndPlace.Enabled, True
+	GSet control.InitJengas_btn.Enabled, True
+	
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	
+	GSet control.Reset_btn.Enabled, False
+
+Fend
+
+Function control_InitPickAndPlace_Click(Sender$ As String)
+	
+	
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, False
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, False
+	
+	GSet control.Result_img.Image, GUI_Pick_and_place$
+	
+	On WORKING_LED
+	
+	GUI_working_init()
+
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, True
+	GSet control.PickAndPlace_btn.Enabled, True
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, False
+	On INIT_LED
+	Off WORKING_LED
+Fend
+
+Function control_PickAndPlace_btn_Click(Sender$ As String)
+	
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, False
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, False
+	Off INIT_LED
+	
+	On WORKING_LED
+	
+	GUI_working()
+	
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, False
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, True
+	Off WORKING_LED
+
+Fend
+
+Function control_InitJengas_btn_Click(Sender$ As String)
+	Off INIT_LED
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, False
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, False
+	
+	GSet control.Result_img.Image, GUI_Jengas$
+	
+	On WORKING_LED
+	
+	GUI_working_init()
+	
+	GSet control.InitPickAndPlace.Enabled, True
+	GSet control.InitJengas_btn.Enabled, True
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, True
+	GSet control.Reset_btn.Enabled, False
+	Off WORKING_LED
+
+	On INIT_LED
+		
+Fend
+
+Function control_Jengas_btn_Click(Sender$ As String)
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, False
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, False
+	Off INIT_LED
+	
+	On WORKING_LED
+	
+	GUI_working()
+	
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, False
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, True
+	Off WORKING_LED
+Fend
+
+Function control_Reset_btn_Click(Sender$ As String)
+	GSet control.InitPickAndPlace.Enabled, False
+	GSet control.InitJengas_btn.Enabled, False
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, False
+	Off INIT_LED
+	
+	GSet control.Result_img.Image, GUI_Defult$
+	
+	On WORKING_LED
+	
+	GUI_working()
+	
+	GSet control.InitPickAndPlace.Enabled, True
+	GSet control.InitJengas_btn.Enabled, True
+	GSet control.PickAndPlace_btn.Enabled, False
+	GSet control.Jengas_btn.Enabled, False
+	GSet control.Reset_btn.Enabled, False
+	Off WORKING_LED
+Fend
+

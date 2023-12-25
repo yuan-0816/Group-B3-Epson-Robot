@@ -9,6 +9,8 @@
 #define BLUE 3
 #define WHITE 4
 
+#define INIT_LED 10
+#define WORKING_LED 12
 
 Global Integer Tokens, Blocks, TokenID, BlockID, Jengas
 
@@ -33,3 +35,9 @@ Global Boolean IsPick
 
 Global Double ArcPointHeight
 Global Double ArcPointX, ArcPointY
+
+Global String GUI_Pick_and_place$, GUI_Jengas$, GUI_Defult$
+
+
+
+

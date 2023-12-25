@@ -1,3 +1,266 @@
-ENVT0100,LM:2023/12/23 12:38:38:599,DS:0000000126,CS:05468,MA:00-D8-61-87-1A-F7,EI:           
+ENVT0100,LM:2023/12/25 18:57:03:250,DS:0000005186,CS:22033,MA:00-D8-61-87-1A-F7,EI:           
 sHelpFile=""
 nStartupForm=0
+nFormCount=1
+Form1 {
+	sBackColor="Control"
+	nEventTaskType=0
+	nFormBorderStyle=3
+	nHeight=710
+	nLeft=15
+	sName="control"
+	nStartPosition=1
+	sText="control"
+	nTop=15
+	nWidth=788
+	nWindowState=0
+	sClosed="(None)"
+	sLoad="control_Load"
+	sResize="(None)"
+	nControlCount=11
+	Control1 {
+		nControlType=7
+		sControlTypeName="GroupBox"
+		nChildIndex=1
+		sBackColor="Control"
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=12
+		bFontBold=True
+		bFontItalic=True
+		sForeColor="ControlText"
+		nHeight=241
+		nLeft=12
+		sName="GroupBox1"
+		nTabIndex=4
+		sText="Control"
+		nTop=25
+		nWidth=551
+	}
+	Control2 {
+		nControlType=13
+		sControlTypeName="Led"
+		nChildIndex=1
+		sParent="LED"
+		sBackColor="Control"
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=14.25
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=51
+		nImageAlign=16
+		sImageOff="LedOff.ico"
+		sImageOn="D:\\EpsonRC50\\GUI\\Icons\\LedYellow.ico"
+		nIOBit=8
+		nIOType=1
+		nLeft=49
+		sName="Vacuum_led"
+		nTabIndex=5
+		sText="Vacuum"
+		nTextAlign=64
+		nTop=21
+		nWidth=97
+	}
+	Control3 {
+		nControlType=1
+		sControlTypeName="Button"
+		nChildIndex=0
+		sParent="GroupBox1"
+		sBackColor="Control"
+		nBackColorMode=0
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=12
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=99
+		nImageAlign=32
+		nLeft=6
+		sName="PickAndPlace_btn"
+		sText="Pick And Place"
+		nTextAlign=32
+		nTop=136
+		nWidth=177
+		sClick="control_PickAndPlace_btn_Click"
+	}
+	Control4 {
+		nControlType=1
+		sControlTypeName="Button"
+		nChildIndex=1
+		sParent="GroupBox1"
+		sBackColor="Control"
+		nBackColorMode=0
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=20.25
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=214
+		nImageAlign=32
+		nLeft=372
+		sName="Reset_btn"
+		nTabIndex=2
+		sText="Reset"
+		nTextAlign=32
+		nTop=21
+		nWidth=168
+		sClick="control_Reset_btn_Click"
+	}
+	Control5 {
+		nControlType=1
+		sControlTypeName="Button"
+		nChildIndex=2
+		sParent="GroupBox1"
+		sBackColor="Control"
+		nBackColorMode=0
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=12
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=99
+		nImageAlign=32
+		nLeft=189
+		sName="Jengas_btn"
+		sText="Jengas"
+		nTextAlign=32
+		nTop=136
+		nWidth=177
+		sClick="control_Jengas_btn_Click"
+	}
+	Control6 {
+		nControlType=1
+		sControlTypeName="Button"
+		nChildIndex=3
+		sParent="GroupBox1"
+		sBackColor="Control"
+		nBackColorMode=0
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=12
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=99
+		nImageAlign=32
+		nLeft=189
+		sName="InitJengas_btn"
+		sText="Init Jengas"
+		nTextAlign=32
+		nTop=21
+		nWidth=177
+		sClick="control_InitJengas_btn_Click"
+	}
+	Control7 {
+		nControlType=1
+		sControlTypeName="Button"
+		nChildIndex=4
+		sParent="GroupBox1"
+		sBackColor="Control"
+		nBackColorMode=0
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=12
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=99
+		nImageAlign=32
+		nLeft=6
+		sName="InitPickAndPlace"
+		sText="Init Pick and Place"
+		nTextAlign=32
+		nTop=21
+		nWidth=177
+		sClick="control_InitPickAndPlace_Click"
+	}
+	Control8 {
+		nControlType=8
+		sControlTypeName="PictureBox"
+		nChildIndex=2
+		sBackColor="Control"
+		nEventTaskType=0
+		nHeight=385
+		nLeft=12
+		sName="Result_img"
+		nSizeMode=1
+		nTop=272
+		nWidth=754
+	}
+	Control9 {
+		nControlType=13
+		sControlTypeName="Led"
+		nChildIndex=2
+		sParent="LED"
+		sBackColor="Control"
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=14.25
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=51
+		nImageAlign=16
+		sImageOff="D:\\EpsonRC50\\GUI\\Icons\\LedOff.ico"
+		sImageOn="D:\\EpsonRC50\\GUI\\Icons\\LedGreen.ico"
+		nIOBit=10
+		nIOType=1
+		nLeft=49
+		sName="IsInit_led"
+		nTabIndex=5
+		sText="Is init"
+		nTextAlign=64
+		nTop=184
+		nWidth=97
+	}
+	Control10 {
+		nControlType=13
+		sControlTypeName="Led"
+		nChildIndex=0
+		sParent="LED"
+		sBackColor="Control"
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=14.25
+		bFontBold=True
+		bFontItalic=False
+		sForeColor="ControlText"
+		nHeight=51
+		nImageAlign=16
+		sImageOff="D:\\EpsonRC50\\GUI\\Icons\\LedOff.ico"
+		sImageOn="D:\\EpsonRC50\\GUI\\Icons\\LedRed.ico"
+		nIOBit=12
+		nIOType=1
+		nLeft=49
+		sName="work_led"
+		nTabIndex=6
+		sText="working"
+		nTextAlign=64
+		nTop=102
+		nWidth=97
+	}
+	Control11 {
+		nControlType=7
+		sControlTypeName="GroupBox"
+		nChildIndex=0
+		sBackColor="Control"
+		nEventTaskType=0
+		sFontName="Times New Roman"
+		rFontSize=12
+		bFontBold=True
+		bFontItalic=True
+		sForeColor="ControlText"
+		nHeight=241
+		nLeft=569
+		sName="LED"
+		nTabIndex=8
+		sText="LED"
+		nTop=25
+		nWidth=197
+	}
+}
