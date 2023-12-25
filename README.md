@@ -1,6 +1,6 @@
 # Group-B3-Epson-Robot
 ##### Autonomous Mobile Vehicles and Robots Introduction B3
-
+![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/rander.png)
 
 -----
 # Introduction
@@ -33,13 +33,27 @@
   
 ## Pick And Place
 ### Simulator
+
+https://github.com/yuan-0816/Group-B3-Epson-Robot/assets/83689217/9fc33828-19f2-4cf0-bc60-6e8ddea87b10
+
 ### Real Device
+https://github.com/yuan-0816/Group-B3-Epson-Robot/assets/83689217/eba1c5a7-3d0e-4e3c-a99f-703b66b05b7d
 
 ## Jenga
 ### Simulator
+
+https://github.com/yuan-0816/Group-B3-Epson-Robot/assets/83689217/af1037ec-8017-45b8-8637-92b3f8aeab79
+
 ### Real Device
 
+https://github.com/yuan-0816/Group-B3-Epson-Robot/assets/83689217/99faec79-6dc7-495d-ba44-afc33e7eea5c
+
+
 ## Graphical User Interface
+![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/GUI.png)
+
+![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/GUI.gif)
+
 
 
 
