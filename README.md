@@ -28,7 +28,7 @@
 ## WorkCell
 ![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/workcell%20v9.png)
 ### WorkCell Layout
-![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/workcell_layout.png). 
+![](https://github.com/yuan-0816/Group-B3-Epson-Robot/blob/main/material/workcell_layout.png)
 
   
 ## Pick And Place
